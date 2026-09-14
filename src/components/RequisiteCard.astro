@@ -1,0 +1,32 @@
+---
+interface Props {
+	flag: string;
+	channelName: string;
+	copyTarget: string;
+	ariaLabel: string;
+	buttonLabel: string;
+}
+
+const { flag, channelName, copyTarget, ariaLabel, buttonLabel } = Astro.props;
+---
+
+<div class="requisite-card" data-copy-target={copyTarget}>
+	<div class="card-header">
+		<div class="channel-info">
+			<span class="flag-icon">{flag}</span>
+			<div class="channel-name">{channelName}</div>
+		</div>
+		<span class="copy-badge">Нажмите, чтобы скопировать</span>
+	</div>
+	<div class="card-body">
+		<slot />
+	</div>
+	<button class="copy-btn" aria-label={ariaLabel}>
+		<svg class="icon-copy" viewBox="0 0 24 24"
+			><path
+				d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"
+			></path></svg
+		>
+		<span>{buttonLabel}</span>
+	</button>
+</div>

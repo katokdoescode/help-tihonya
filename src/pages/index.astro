@@ -1,0 +1,162 @@
+---
+import Layout from '../layouts/Layout.astro';
+import RequisiteCard from '../components/RequisiteCard.astro';
+
+const galleryItems = [
+	{ src: 'assets/tihonya-1.jpg', alt: 'Тихоня — счастливая и активная' },
+	{ src: 'assets/tihonya-2.jpg', alt: 'Тихоня на прогулке' },
+	{ src: 'assets/tihonya-3.jpg', alt: 'Тихоня отдыхает' },
+];
+---
+
+<Layout title="Помощь Тихоне" description="Помогите Тихоне (Лане) — умной и ласковой девочке, метису курцхаара — найти дом и получить поддержку">
+	<!-- HEADER -->
+	<header class="main-header">
+		<span class="badge">Ищем дом и помощь</span>
+		<h1>Тихоня 🐾</h1>
+		<p class="subtitle">Метис курцхаара, 1 год 2 мес., 18 кг ласки и энергии</p>
+	</header>
+
+	<!-- MICRO GALLERY -->
+	<section class="gallery-section">
+		<div class="gallery-wrapper">
+			<div class="gallery-scroll" id="gallery">
+				{
+					galleryItems.map((item) => (
+						<div class="gallery-item" data-full={item.src}>
+							<img src={item.src} alt={item.alt} loading="lazy" />
+							<div class="gallery-overlay">
+								<span>Увеличить</span>
+							</div>
+						</div>
+					))
+				}
+			</div>
+		</div>
+		<div class="gallery-hints">
+			<span class="swipe-hint">← Прокрутите фото вбок →</span>
+		</div>
+	</section>
+
+	<main class="main-content">
+		<!-- NARRATIVE / STORY -->
+		<section class="story-card">
+			<h2>История Тихони</h2>
+			<div class="story-text">
+				<p>Тихоня — умная и чуткая девочка с шоколадной шерсткой и белыми носочками, метис курцхаара, 18 кг ласки.</p>
+
+				<p>Мы нашли её совсем крошечным щенком в горах Имеретии — провалившуюся в глубокую яму под ветками терновника рядом со стройкой.</p>
+
+				<p>Был июльский полдень. Мы кормили всех встречающихся по пути собак, и на одной из остановок, у стройки, увидели целую стаю истощённых животных с голодными глазами. Среди них — маленький черный комочек, косо качавшийся в сторону рассыпанного корма. Это был щенок, такой крошечный, что кусок корма не помещался у него в пасти. Другие собаки рычали и гавкали при её приближении, преграждая путь к еде лапой размером больше самой малявки. Приходилось дробить корм булыжниками и кормить щенка с рук — крошками, чтобы хоть что-то ей досталось. Ни мамы, ни сестёр рядом с ней не было.</p>
+
+				<p>У нас была другая цель в тот день, и без денег, без кураторки или хотя бы передержки взять её с собой мы не могли. Пришлось уехать.</p>
+
+				<p>Всю дорогу мы писали знакомым — «получи щенка, нужно всего лишь…», «стань лучшим куратором, для этого…» — в поисках того, кто сможет её принять. Через несколько часов, уже затемно, отозвался Олег из Чогнари — он был готов взять малышку к себе без всяких условий.</p>
+
+				<p>После девяти вечера, в темноте, вместе с Олегом мы вернулись на то же место. Прочесали обочину, ближайший лес, стройку — светились самые разные собачьи глаза, но её среди них не было. После тщетных поисков собрались было возвращаться — в чёрном лесу искать маленького чёрного щенка почти невозможно.</p>
+
+				<p>И тут — чудо. С противоположной стороны дороги она пропищала из ямы, заваленной колючими ветками шиповника, откуда сама выбраться не могла.</p>
+
+				<p>Сейчас Тихоня живёт у нас, быстро учится и тонко понимает человека. В несколько месяцев она сама научилась играть в мяч — будто это она приучила нас его кидать. Тихоня ищет дом, где её тихая преданность будет по-настоящему нужна.</p>
+
+				<p>Любая помощь — на её содержание, ветеринара и поиск дома — бесценна. Спасибо, что дочитали её историю до конца 🙏</p>
+			</div>
+
+			<div class="facts-grid">
+				<div class="fact-item">
+					<span class="fact-label">Кличка</span>
+					<span class="fact-value">Тихоня (Лана)</span>
+				</div>
+				<div class="fact-item">
+					<span class="fact-label">Пол</span>
+					<span class="fact-value">Девочка</span>
+				</div>
+				<div class="fact-item">
+					<span class="fact-label">Возраст</span>
+					<span class="fact-value">1 год 2 мес. (др. ~15.06)</span>
+				</div>
+				<div class="fact-item">
+					<span class="fact-label">Порода</span>
+					<span class="fact-value">Метис курцхаара</span>
+				</div>
+				<div class="fact-item">
+					<span class="fact-label">Вес</span>
+					<span class="fact-value">~18 кг</span>
+				</div>
+			</div>
+		</section>
+
+		<!-- SOCIAL LINKS -->
+		<section class="social-section">
+			<h2>Следите за историей Тихони</h2>
+			<div class="social-links">
+				<a class="social-link" href="https://t.me/chognaritiho" target="_blank" rel="noopener noreferrer">💬 Telegram-чат</a>
+				<a class="social-link" href="https://www.instagram.com/tisha.dogforlove" target="_blank" rel="noopener noreferrer">📸 Instagram</a>
+			</div>
+		</section>
+
+		<!-- REQUISITES / DONATION CARDS -->
+		<section class="requisites-section">
+			<h2>Реквизиты для перевода</h2>
+
+			<div class="requisites-grid">
+				<!-- T-BANK SBP -->
+				<RequisiteCard
+					flag="🇷🇺"
+					channelName="Т-Банк (СБП)"
+					copyTarget="+7 967 193 00 86"
+					ariaLabel="Скопировать номер телефона"
+					buttonLabel="Скопировать номер"
+				>
+					<div class="credential-label">Номер телефона (СБП)</div>
+					<div class="credential-value select-text">+7 967 193 00 86</div>
+					<div class="recipient-info">Получатель: Мария Х.</div>
+				</RequisiteCard>
+
+				<!-- BASISBANK GEORGIA IBAN -->
+				<RequisiteCard
+					flag="🇬🇪"
+					channelName="BasisBank (Грузия)"
+					copyTarget="GE67BS0000093417545002"
+					ariaLabel="Скопировать IBAN"
+					buttonLabel="Скопировать IBAN"
+				>
+					<div class="credential-label">IBAN</div>
+					<div class="credential-value select-text">GE67BS0000093417545002</div>
+					<div class="recipient-info">Получатель: Khaliapina Mariia</div>
+				</RequisiteCard>
+
+				<!-- PAYPAL -->
+				<RequisiteCard
+					flag="🌍"
+					channelName="PayPal"
+					copyTarget="https://paypal.me/MariiaKhaliapina"
+					ariaLabel="Скопировать ссылку PayPal"
+					buttonLabel="Скопировать ссылку"
+				>
+					<div class="credential-label">PayPal ссылка</div>
+					<div class="credential-value select-text">paypal.me/MariiaKhaliapina</div>
+					<div class="recipient-info">Можно перейти по ссылке и отправить перевод напрямую</div>
+				</RequisiteCard>
+
+				<!-- CRYPTO USDT TRC20 -->
+				<RequisiteCard
+					flag="🪙"
+					channelName="USDT (TRC-20)"
+					copyTarget="TPeqPbnGdZWabr3PTTYGnDMUEJYTh3nGGt"
+					ariaLabel="Скопировать адрес кошелька"
+					buttonLabel="Скопировать адрес"
+				>
+					<div class="credential-label">Адрес кошелька (TRC-20)</div>
+					<div class="credential-value crypto-address select-text">TPeqPbnGdZWabr3PTTYGnDMUEJYTh3nGGt</div>
+					<div class="recipient-info">Сеть: TRC-20 (только USDT)</div>
+				</RequisiteCard>
+			</div>
+		</section>
+	</main>
+
+	<!-- FOOTER -->
+	<footer class="main-footer">
+		<p>Спасибо за вашу доброту и поддержку! ❤️</p>
+	</footer>
+</Layout>
