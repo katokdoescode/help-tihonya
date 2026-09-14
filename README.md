@@ -13,7 +13,7 @@ npm run preview   # предпросмотр собранного dist/
 
 ## Фото
 
-Положите фотографии Тихони в `public/assets/` под именами `tihonya-1.jpg`, `tihonya-2.jpg`, `tihonya-3.jpg` (или обновите `galleryItems` в `src/pages/index.astro`, если имена файлов другие).
+Фотографии Тихони лежат в `public/assets/` (сейчас — `tihonya-4.jpg`). Чтобы добавить ещё, положите файл в `public/assets/` и добавьте его в массив `galleryItems` в `src/pages/index.astro`.
 
 ## Деплой
 
