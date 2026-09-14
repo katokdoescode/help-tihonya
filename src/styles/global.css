@@ -221,6 +221,39 @@ body {
     font-weight: 700;
 }
 
+/* Collapsible story section */
+.story-details {
+    background-color: var(--bg-color);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+}
+
+.story-details summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 1.05rem;
+    user-select: none;
+}
+
+.story-details summary::marker {
+    color: var(--accent);
+}
+
+.story-details summary:hover {
+    color: var(--accent-hover);
+}
+
+.story-details[open] summary {
+    margin-bottom: 14px;
+}
+
+.story-details-content {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
 /* Quick facts grid (name, age, breed, weight) */
 .facts-grid {
     display: grid;
