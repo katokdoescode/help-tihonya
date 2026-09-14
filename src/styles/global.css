@@ -397,6 +397,18 @@ body {
     font-size: 1.05rem;
 }
 
+.credential-link {
+    display: inline-block;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: color var(--transition-fast), text-decoration-color var(--transition-fast);
+}
+
+.credential-link:hover,
+.credential-link:focus-visible {
+    text-decoration-color: currentColor;
+}
+
 .recipient-info {
     font-size: 0.9rem;
     color: var(--text-secondary);

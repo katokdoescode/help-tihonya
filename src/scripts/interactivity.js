@@ -46,6 +46,14 @@ function initClipboard() {
         });
     });
 
+    // Let real links inside a card (e.g. PayPal) open normally instead of triggering copy
+    const cardLinks = document.querySelectorAll('.credential-link');
+    cardLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+    });
+
     /**
      * Copy text to clipboard and show toast notification
      */
