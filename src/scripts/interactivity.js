@@ -1,5 +1,5 @@
 /**
- * Help Тихоня — Core Interactivity Script
+ * Help Тиша — Core Interactivity Script
  * Handles: Lightbox Gallery, Copy-to-Clipboard with Event Delegation and Toast Notifications
  */
 
